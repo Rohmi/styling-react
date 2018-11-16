@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import classNames from 'classnames/bind';
-import styles from './App.module.scss';
-const cx = classNames.bind(styles);
-
-console.log(styles);
+import StyledButton from './components/StyledButton';
 
 class App extends Component {
   render() {
-    const isBlue = true;
     return (
-      <div className={cx('box', { 
-        blue: isBlue 
-      })}>
+      <div>
+        <StyledButton>버튼</StyledButton>
       </div>
     );
   }
