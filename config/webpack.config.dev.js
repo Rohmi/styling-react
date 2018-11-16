@@ -67,9 +67,12 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
       },
     },
   ];
+  
   if (preProcessor) {
-    console.log(cssOptions, preProcessor);
-    loaders.push(require.resolve(preProcessor));
+    loaders.push({
+      loader: require.resolve(preProcessor),
+      options: cssOptions,
+    });
   }
   return loaders;
 };
@@ -277,9 +280,7 @@ module.exports = {
           {
             test: cssRegex,
             exclude: cssModuleRegex,
-            use: getStyleLoaders({
-              importLoaders: 1,
-            }),
+            use: getStyleLoaders({ importLoaders: 1, }),
           },
           // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
           // using the extension .module.css
