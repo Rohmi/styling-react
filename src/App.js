@@ -16,7 +16,7 @@ class App extends Component {
           <div className={cx('box-inside')}></div>
         </div>
         <Button>버튼</Button>
-        <StyledButton>버튼</StyledButton>
+        <StyledButton big>버튼</StyledButton>
       </div>
     );
   }
